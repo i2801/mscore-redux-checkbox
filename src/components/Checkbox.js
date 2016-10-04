@@ -84,15 +84,10 @@ class CheckBoxItems extends Component {
   handleClick(num) {
     this.posNum = num;
     this.props.handleFocus(this.props.id, this.posNum);
-    //this.handleReset(num);
-    //this.props.handleAllReset();
   }
 
   handleReset(posNum) {
     this.posNum = posNum;
-    // this.setState({
-    //   posNum: posNum
-    // });
 
     for (let k=1;k<=50;k++) {
       const checkArea = this.refs['checkArea'+k];

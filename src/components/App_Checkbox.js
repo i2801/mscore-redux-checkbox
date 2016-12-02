@@ -18,14 +18,20 @@
 
 import React, { Component } from 'react';
 
-import Main from './Main';
+import CheckboxDiv from './Checkbox';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      queNum: 478,
+    }
+  }
 
   render() {
       return(
-          <Main/>
+          <CheckboxDiv queNum={this.state.queNum}/>
       );
   }
 }

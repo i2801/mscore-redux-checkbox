@@ -106,7 +106,7 @@ class CheckBoxItems extends Component {
     if(e) { key=e.key; }
     if(act) { key=act; }
     switch(key) {
-      case "ArrowDown":
+      case "ArrowDown": case "Down":
         // (현재 커서의 번호가 총 문항 수와 동일하면 더이상 이동 하지 않음.
         if( (this.props.id*50)+this.posNum >= this.queNum ) { if(e) e.preventDefault(); return; }
 
@@ -126,7 +126,7 @@ class CheckBoxItems extends Component {
         if(e) { e.preventDefault(); }
         //return false;
         break;
-      case "ArrowUp":
+      case "ArrowUp": case "Up":
         // 현재 row 의 0번쨰이며 제일 처음 row 일 시 더이상 이동 하지 않음.
         if( this.props.id === 0 && this.posNum <= 1 ) { if(e) e.preventDefault(); return; }
 
@@ -146,7 +146,7 @@ class CheckBoxItems extends Component {
         if(e) { e.preventDefault(); }
         //return false;
         break;
-      case "ArrowRight":
+      case "ArrowRight": case "Right":
         // 커서가 마지막 row 바로 이전에 위치 할 시 (현재 커서의 번호+50) 이 마지막 row에 존재하는지 검사하여 이동 여부 결정
         if( ((this.props.id*50)+this.posNum)+50 > this.queNum ) { if(e) e.preventDefault(); return; }
         // 마지막 row 일 시 더이상 이동 하지 않음
@@ -157,7 +157,7 @@ class CheckBoxItems extends Component {
         if(e) { e.preventDefault(); }
         //return false;
         break;
-      case "ArrowLeft":
+      case "ArrowLeft": case "Left":
         if(this.props.id === 0 ) { if(e) e.preventDefault(); return; }
 
         nextId = this.props.id - 1;
@@ -275,11 +275,13 @@ class CheckboxDiv extends Component {
   }
 
   togglePlay() {
-    if(this.audio.paused) {
-      this.audio.play();
-    } else {
-      this.audio.pause();
-    }
+    this.audio.pause();
+    this.audio.play();
+    // if(this.audio.paused) {
+    //   this.audio.play();
+    // } else {
+    //   this.audio.pause();
+    // }
   }
 
   componentWillMount() {

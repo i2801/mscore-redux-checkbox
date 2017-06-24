@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import App from './components/App';
+import App from './components/App_Checkbox';
 
 import { createStore } from 'redux';
 import reducers from './reducers';
